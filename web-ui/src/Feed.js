@@ -3,15 +3,17 @@ import { Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-function photo_path(post) {
-  return "http://localhost:4000/photos/" + post.photo_hash;
-}
 
 function Post({post}) {
   return (
     <Col md="3">
       <Card>
-        <Card.Img variant="top" src={photo_path(post)} />
+        <Card.Text>
+          {post.title}
+        </Card.Text>
+        <Card.Text>
+          Date: {post.date}
+        </Card.Text>
         <Card.Text>
           Posted by {post.user.name} <br/>
           {post.body}

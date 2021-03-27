@@ -3,8 +3,9 @@ defmodule PhotoBlog.Repo.Migrations.CreatePosts do
 
   def change do
     create table(:posts) do
-      add :body, :text, null: false
-      add :photo_hash, :string, null: false
+      add :date, :text, null: false
+      add :title, :text, null: false, default: ""
+      add :body, :text, null: false, default: ""
       add :user_id, references(:users, on_delete: :nothing),
         null: false
 

@@ -20,8 +20,9 @@ defmodule PhotoBlogWeb.PostView do
 
     %{
       id: post.id,
+      date: post.date,
+      title: post.title,
       body: post.body,
-      photo_hash: post.photo_hash,
       user: user,
     }
   end

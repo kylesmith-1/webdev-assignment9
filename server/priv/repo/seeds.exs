@@ -37,14 +37,16 @@ nature = Inject.photo("nature.jpg")
 
 p1 = %Post{
   user_id: alice.id,
-  photo_hash: moon,
+  date: "1-1-1",
+  title: "the first fun time",
   body: "Alice says Hi!"
 }
 Repo.insert!(p1)
 
 p2 = %Post{
   user_id: bob.id,
-  photo_hash: nature,
+  date: "2-2-2",
+  title: "the second fun time",
   body: "Bob ate Pizza!"
 }
 Repo.insert!(p2)

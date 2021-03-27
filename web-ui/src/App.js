@@ -9,6 +9,14 @@ import UsersNew from './Users/New';
 import PostsNew from './Posts/New';
 import Feed from './Feed';
 
+
+import flatpickr from 'flatpickr';
+
+flatpickr("#date_selector", {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+  });
+
 function App() {
   return (
     <Container>

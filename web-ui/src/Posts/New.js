@@ -23,9 +23,15 @@ export default function PostsNew() {
     });
   }
 
-  function updatePhoto(ev) {
+  function updateTitle(ev) {
     let p1 = Object.assign({}, post);
-    p1["photo"] = ev.target.files[0];
+    p1["title"] = ev.target.value;
+    setPost(p1);
+  }
+
+  function updateDate(ev) {
+    let p1 = Object.assign({}, post);
+    p1["date"] = ev.target.value;
     setPost(p1);
   }
 
@@ -41,12 +47,22 @@ export default function PostsNew() {
         <h2>New Event</h2>
         <Form onSubmit={submit}>
           <Form.Group>
-            <Form.Label>Photo</Form.Label>
-            <Form.Control type="file"
-                          onChange={updatePhoto} />
+            <Form.Label>Title</Form.Label>
+            <Form.Control as="textarea"
+                          rows={1}
+                          onChange={updateTitle}
+                          value={post.title} />
           </Form.Group>
           <Form.Group>
-            <Form.Label>Text</Form.Label>
+            <Form.Label>Date</Form.Label>
+            <Form.Control as="textarea"
+                          id="date_selector"
+                          rows={1}
+                          onChange={updateDate}
+                          value={post.date} />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Description</Form.Label>
             <Form.Control as="textarea"
                           rows={4}
                           onChange={updateBody}
