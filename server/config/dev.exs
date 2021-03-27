@@ -1,10 +1,10 @@
 use Mix.Config
 
 # Configure your database
-config :photo_blog, PhotoBlog.Repo,
-  username: "photo_blog",
+config :events, Events.Repo,
+  username: "events",
   password: "uzae7aiw1eeV",
-  database: "photo_blog_dev",
+  database: "events_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -15,7 +15,7 @@ config :photo_blog, PhotoBlog.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :photo_blog, PhotoBlogWeb.Endpoint,
+config :events, EventsWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -53,13 +53,13 @@ config :cors_plug,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :photo_blog, PhotoBlogWeb.Endpoint,
+config :events, EventsWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/photo_blog_web/(live|views)/.*(ex)$",
-      ~r"lib/photo_blog_web/templates/.*(eex)$"
+      ~r"lib/events_web/(live|views)/.*(ex)$",
+      ~r"lib/events_web/templates/.*(eex)$"
     ]
   ]
 

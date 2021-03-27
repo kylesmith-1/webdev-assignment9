@@ -1,4 +1,4 @@
-# PhotoBlog
+# Events
 
 To start your Phoenix server:
 

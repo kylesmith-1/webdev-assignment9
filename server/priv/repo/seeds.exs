@@ -5,19 +5,19 @@
 # Inside the script, you can read and write to any of your
 # repositories directly:
 #
-#     PhotoBlog.Repo.insert!(%PhotoBlog.SomeSchema{})
+#     Events.Repo.insert!(%Events.SomeSchema{})
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-alias PhotoBlog.Repo
-alias PhotoBlog.Users.User
-alias PhotoBlog.Posts.Post
-alias PhotoBlog.Photos
+alias Events.Repo
+alias Events.Users.User
+alias Events.Posts.Post
+alias Events.Photos
 
 defmodule Inject do
   def photo(name) do
-    photos = Application.app_dir(:photo_blog, "priv/photos")
+    photos = Application.app_dir(:events, "priv/photos")
     path = Path.join(photos, name)
     {:ok, hash} = Photos.save_photo(name, path)
     hash

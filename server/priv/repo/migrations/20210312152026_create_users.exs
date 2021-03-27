@@ -1,4 +1,4 @@
-defmodule PhotoBlog.Repo.Migrations.CreateUsers do
+defmodule Events.Repo.Migrations.CreateUsers do
   use Ecto.Migration
 
   def change do

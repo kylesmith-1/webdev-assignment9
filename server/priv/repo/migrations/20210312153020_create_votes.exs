@@ -1,4 +1,4 @@
-defmodule PhotoBlog.Repo.Migrations.CreateVotes do
+defmodule Events.Repo.Migrations.CreateVotes do
   use Ecto.Migration
 
   def change do
