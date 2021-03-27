@@ -8,9 +8,11 @@ import UsersList from './Users/List';
 import UsersNew from './Users/New';
 import PostsNew from './Posts/New';
 import Feed from './Feed';
+import Event from './Event';
 
 
 import flatpickr from 'flatpickr';
+import { render } from 'react-dom';
 
 flatpickr("#date_selector", {
     enableTime: true,
@@ -25,6 +27,7 @@ function App() {
         <Route path="/" exact>
           <Feed />
         </Route>
+        <Route path="/events/:id" component={props => <Event id={props.match.params.id}/>} />
         <Route path="/posts/new" exact>
           <PostsNew />
         </Route>

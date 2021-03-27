@@ -17,10 +17,13 @@ function LoginForm() {
 
   return (
     <Form onSubmit={on_submit} inline>
+      <Col>
+      <Form.Label>Name</Form.Label>
       <Form.Control name="name"
                     type="text"
                     onChange={(ev) => setName(ev.target.value)}
                     value={name} />
+      <Form.Label>Password</Form.Label>
       <Form.Control name="password"
                     type="password"
                     onChange={(ev) => setPass(ev.target.value)}
@@ -28,6 +31,7 @@ function LoginForm() {
       <Button variant="primary" type="submit">
         Login
       </Button>
+      </Col>
     </Form>
   );
 }
@@ -85,8 +89,7 @@ function AppNav({error}) {
       <Row>
         <Col>
           <Nav variant="pills">
-            <Link to="/">Feed</Link>
-            <Link to="/users">Users</Link>
+            <Link to="/">My Events Feed</Link>
           </Nav>
         </Col>
         <Col>
