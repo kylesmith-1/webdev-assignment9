@@ -9,7 +9,7 @@ import { create_user, fetch_users } from '../api';
 function UsersNew() {
   let history = useHistory();
   const [user, setUser] = useState({
-    name: "", pass1: "", pass2: "",
+    name: "", email: "", pass1: "", pass2: "",
   });
 
   function onSubmit(ev) {
@@ -17,7 +17,7 @@ function UsersNew() {
     console.log(ev);
     console.log(user);
 
-    let data = pick(user, ['name', 'password']);
+    let data = pick(user, ['name', 'email', 'password']);
     create_user(data).then(() => {
       fetch_users();
       history.push("/users");
@@ -48,6 +48,13 @@ function UsersNew() {
 
   return (
     <Form onSubmit={onSubmit}>
+      <Form.Group>
+        <Form.Label>Email</Form.Label>
+        <Form.Control type="text"
+                      onChange={
+                        (ev) => update("email", ev)}
+          value={user.email} />
+      </Form.Group>
       <Form.Group>
         <Form.Label>Name</Form.Label>
         <Form.Control type="text"

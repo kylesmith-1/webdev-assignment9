@@ -29,7 +29,7 @@ function Feed({posts, session}) {
   let new_link = null;
   if (session) {
     new_link = (
-      <p><Link to="/posts/new">New Post</Link></p>
+      <p><Link to="/posts/new">New Event</Link></p>
     )
   }
 

@@ -23,14 +23,14 @@ defmodule Inject do
     hash
   end
 
-  def user(name, pass) do
+  def user(name, email, pass) do
     hash = Argon2.hash_pwd_salt(pass)
-    Repo.insert!(%User{name: name, password_hash: hash})
+    Repo.insert!(%User{name: name, email: email, password_hash: hash})
   end
 end
 
-alice = Inject.user("alice", "test1")
-bob = Inject.user("bob", "test2")
+alice = Inject.user("alice", "alice@gmail.com", "test1")
+bob = Inject.user("bob", "bob@gmail.com", "test2")
 
 moon = Inject.photo("moon.jpg")
 nature = Inject.photo("nature.jpg")

@@ -38,7 +38,7 @@ export default function PostsNew() {
   return (
     <Row>
       <Col>
-        <h2>New Post</h2>
+        <h2>New Event</h2>
         <Form onSubmit={submit}>
           <Form.Group>
             <Form.Label>Photo</Form.Label>
